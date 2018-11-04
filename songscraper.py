@@ -27,7 +27,7 @@ class ChristmasSpider(CrawlSpider):
             Rule(LinkExtractor(allow=(),),
 			callback=self.parse_item, follow=True)
         ]
-        self.writer = csv.writer(open("songs.csv", "w"))
+        self.writer = csv.writer(open("othersongs.csv", "w"))
 	
     def parse_start_url(self, response):
         yield self.parse_item(response)	
